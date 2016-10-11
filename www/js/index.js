@@ -8,7 +8,7 @@ var launched_count = 0;
     }
 	
 	function updateDisplay() {
-		$("#launched").text("Application launched: " + launched_count);
+		$("#launched").text("Application launched: " + launched_count); //displaying how many times the app has been launced paused and resumed
 		$("#resumed").text("Application paused: " + paused_count);
 		$("#paused").text("Application resumed: " + resumed_count);
 	}
@@ -19,7 +19,9 @@ var launched_count = 0;
     function onDeviceReady() {
 		alert("device ready");
         
+        //Listening for resume event
 		document.addEventListener("resume", onResume, false);
+		//listening for pause event
 		document.addEventListener("pause", onPause, false);
 		
 		launched_count++;
